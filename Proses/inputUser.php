@@ -11,11 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_firstname = $_POST['firstname'];
     $input_lastname = $_POST['lastname'];
     $input_phone = $_POST['phone'];
+    $input_address = $_POST['address'];
 
     // Pastikan inputan tidak kosong
-    if (!empty($input_firstname) && !empty($input_lastname) && !empty($input_phone)) {
+    if (!empty($input_firstname) && !empty($input_lastname) && !empty($input_phone) && !empty($input_address)) {
         // Buat object baru dari class User
-        $userBaru = new User($input_firstname, $input_lastname, $input_phone);
+        $userBaru = new User($input_firstname, $input_lastname, $input_phone, $input_address);
         
         // Ambil datanya dan simpan ke variabel $dataTampil
         $dataTampil = $userBaru->getData();
